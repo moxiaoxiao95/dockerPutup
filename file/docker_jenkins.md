@@ -1,13 +1,18 @@
 # 1.安装docker
 ```
+#更新yum工具包
 yum update
 
+#下载docker
 curl -sSL https://get.docker.com/ | sh
 
+#启动docker
 systemctl start docker
 
+#查看docker版本
 docker --version
 
+#设置开机自启动
 systemctl enable docker
 
 #配置docker加速器
