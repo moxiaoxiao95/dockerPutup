@@ -50,6 +50,11 @@ chown -R 1000:1000 /var/jenkins_home
 ## 4.1 配置全局变量
 ### 4.1.1配置jdk
 ![](./imges/jdkinstall.png)
+### 4.1.2配置git
+![](./imges/gitinstall.png)
+### 4.1.3配置maven
+![](./imges/maveninstall.png)
+
 
 
 
