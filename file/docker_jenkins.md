@@ -49,7 +49,7 @@ chown -R 1000:1000 /var/jenkins_home
 # 4. 配置jenkins
 ## 4.1 配置全局变量
 ### 4.1.1配置jdk
-![](imges/jdkinstall.png)
+![](./imges/jdkinstall.png)
 
 
 
