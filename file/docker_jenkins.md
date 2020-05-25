@@ -54,6 +54,35 @@ chown -R 1000:1000 /var/jenkins_home
 ![](./imges/gitinstall.png)
 ### 4.1.3配置maven
 ![](./imges/maveninstall.png)
+## 4.2配置项目配置
+### 4.2.1配置git地址
+![](./imges/git%20peizhi.png)
+### 4.2.2配置maven地址
+![](./imges/mavendizhi.png)
+### 4.2.3脚本配置
+![](./imges/shell配置.png)
+```
+#详细脚本
+docker rm -f  springbootapp
+cp /home/jenkins_home/workspace/springbootdemo/target/springbootdemo-0.0.1-SNAPSHOT.jar /app/springbootdemo/springbootdemo-0.0.1-SNAPSHOT.jar 
+cd /app/springbootdemo/
+docker build -t springbootdemo .
+docker run --name springbootdemo -p 8090:8090 -d  springbootdemo
+
+```
+```
+#springbootdemo 项目的Dokerfile
+FROM java:8
+VOLUME /tmp
+ARG JAR_FILe
+COPY springbootdemo-0.0.1-SNAPSHOT.jar app.jar
+RUN bash -c 'touch /app.jar'
+EXPOSE 8090
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+
+```
+
+
 
 
 
