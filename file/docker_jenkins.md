@@ -1,4 +1,4 @@
-#1.安装docker
+# 1.安装docker
 ```
 yum update
 
