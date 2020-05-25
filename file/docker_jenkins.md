@@ -58,6 +58,7 @@ chown -R 1000:1000 /var/jenkins_home
 </sites>
 ```
 之后需要重启jenkins 容器
+
 `docker restart jenkins`
 # 4. 配置jenkins
 ## 4.1 配置全局变量
