@@ -46,6 +46,19 @@ chown -R 1000:1000 /var/jenkins_home
 ```
 ## 3.2 启动jenkins容器
 `docker run -itd -p 8081:8080 --name jenkins --privileged=true -v /home/jenkins_home/:/var/jenkins_home -v ~/.ssh/:/root.ssh jenkin_lm`
+## 3.3 配置更新插件的地址（网络不好时配置）
+`vim hudson.model.UpdateCenter.xml`
+```
+<?xml version='1.1' encoding='UTF-8'?>
+<sites>
+  <site>
+    <id>default</id>
+    <url>https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json</url>
+  </site>
+</sites>
+```
+之后需要重启jenkins 容器
+`docker restart jenkins`
 # 4. 配置jenkins
 ## 4.1 配置全局变量
 ### 4.1.1配置jdk
